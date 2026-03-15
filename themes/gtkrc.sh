@@ -262,16 +262,15 @@ make_gtkrc() {
     mkdir -p "${THEME_DIR}/gtk-2.0"
 
     cp -r "${GTKRC_DIR}/gtkrc${ELSE_DARK:-}-default" "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "s/#fbf1c7/${background_light}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "s/#1d2021/${background_dark}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "s/#3c3836/${background_alt}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
 
     if [[ "${color}" == '-Dark' ]]; then
-        sed -i "s/#7daea3/${theme_color}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
-        sed -i "s/#3c3836/${background_darker}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
-        sed -i "s/#282524/${titlebar_dark}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#1D2021/${background_dark}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#7DAEA3/${theme_color}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#3C3836/${background_darker}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#504945/${background_alt}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#282828/${titlebar_dark}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
     else
-        sed -i "s/#45707a/${theme_color}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
-        sed -i "s/#ebdbb2/${titlebar_light}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#45707A/${theme_color}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
+        sed -i "s/#FBF1C7/${titlebar_light}/g" "${THEME_DIR}/gtk-2.0/gtkrc"
     fi
 }
